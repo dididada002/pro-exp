@@ -23,6 +23,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.pro</groupId>
+            <artifactId>pro-exp-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pro</groupId>
+            <artifactId>pro-exp-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${mybatis.starter.version}</version>

@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableCaching //开启缓存
 @EnableTransactionManagement(proxyTargetClass=true) // 开启事务管理
 @EnableAsync
-@ComponentScan(basePackages = {"com.pro.proexpweb"})
+@ComponentScan(basePackages = {"com.pro"})
 @EnableConfigurationProperties({MybatisConfigProperties.class, DataSourceConfig.class})
 @ServletComponentScan
 @EnableSwagger2
