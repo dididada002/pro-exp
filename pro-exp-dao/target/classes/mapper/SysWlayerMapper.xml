@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.exp.dao.interfaces.SysWlayerMapper" >
+  <resultMap id="BaseResultMap" type="com.pro.exp.dao.entity.SysWlayer" >
+    <id column="sys_wlayer_id" property="sysWlayerId" jdbcType="VARCHAR" />
+    <result column="sys_m2layer_id" property="sysM2layerId" jdbcType="VARCHAR" />
+    <result column="sys_wlayer_name" property="sysWlayerName" jdbcType="VARCHAR" />
+    <result column="sys_wlayer_tag" property="sysWlayerTag" jdbcType="VARCHAR" />
+    <result column="sys_wlayer_http" property="sysWlayerHttp" jdbcType="VARCHAR" />
+    <result column="sys_isactive" property="sysIsactive" jdbcType="VARCHAR" />
+    <result column="sys_created" property="sysCreated" jdbcType="TIMESTAMP" />
+    <result column="sys_createdby" property="sysCreatedby" jdbcType="VARCHAR" />
+    <result column="sys_updated" property="sysUpdated" jdbcType="TIMESTAMP" />
+    <result column="sys_updatedby" property="sysUpdatedby" jdbcType="VARCHAR" />
+    <result column="sys_remark" property="sysRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    sys_wlayer_id, sys_m2layer_id, sys_wlayer_name, sys_wlayer_tag, sys_wlayer_http, 
+    sys_isactive, sys_created, sys_createdby, sys_updated, sys_updatedby, sys_remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pro.exp.dao.entity.SysWlayerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_wlayer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_wlayer
+    where sys_wlayer_id = #{sysWlayerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_wlayer
+    where sys_wlayer_id = #{sysWlayerId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pro.exp.dao.entity.SysWlayerExample" >
+    delete from sys_wlayer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pro.exp.dao.entity.SysWlayer" >
+    insert into sys_wlayer (sys_wlayer_id, sys_m2layer_id, sys_wlayer_name, 
+      sys_wlayer_tag, sys_wlayer_http, sys_isactive, 
+      sys_created, sys_createdby, sys_updated, 
+      sys_updatedby, sys_remark)
+    values (#{sysWlayerId,jdbcType=VARCHAR}, #{sysM2layerId,jdbcType=VARCHAR}, #{sysWlayerName,jdbcType=VARCHAR}, 
+      #{sysWlayerTag,jdbcType=VARCHAR}, #{sysWlayerHttp,jdbcType=VARCHAR}, #{sysIsactive,jdbcType=VARCHAR}, 
+      #{sysCreated,jdbcType=TIMESTAMP}, #{sysCreatedby,jdbcType=VARCHAR}, #{sysUpdated,jdbcType=TIMESTAMP}, 
+      #{sysUpdatedby,jdbcType=VARCHAR}, #{sysRemark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pro.exp.dao.entity.SysWlayer" >
+    insert into sys_wlayer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysWlayerId != null" >
+        sys_wlayer_id,
+      </if>
+      <if test="sysM2layerId != null" >
+        sys_m2layer_id,
+      </if>
+      <if test="sysWlayerName != null" >
+        sys_wlayer_name,
+      </if>
+      <if test="sysWlayerTag != null" >
+        sys_wlayer_tag,
+      </if>
+      <if test="sysWlayerHttp != null" >
+        sys_wlayer_http,
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive,
+      </if>
+      <if test="sysCreated != null" >
+        sys_created,
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby,
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated,
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby,
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysWlayerId != null" >
+        #{sysWlayerId,jdbcType=VARCHAR},
+      </if>
+      <if test="sysM2layerId != null" >
+        #{sysM2layerId,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerName != null" >
+        #{sysWlayerName,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerTag != null" >
+        #{sysWlayerTag,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerHttp != null" >
+        #{sysWlayerHttp,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        #{sysRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pro.exp.dao.entity.SysWlayerExample" resultType="java.lang.Integer" >
+    select count(*) from sys_wlayer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_wlayer
+    <set >
+      <if test="record.sysWlayerId != null" >
+        sys_wlayer_id = #{record.sysWlayerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysM2layerId != null" >
+        sys_m2layer_id = #{record.sysM2layerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysWlayerName != null" >
+        sys_wlayer_name = #{record.sysWlayerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysWlayerTag != null" >
+        sys_wlayer_tag = #{record.sysWlayerTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysWlayerHttp != null" >
+        sys_wlayer_http = #{record.sysWlayerHttp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysIsactive != null" >
+        sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysCreated != null" >
+        sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysCreatedby != null" >
+        sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysUpdated != null" >
+        sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysUpdatedby != null" >
+        sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysRemark != null" >
+        sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_wlayer
+    set sys_wlayer_id = #{record.sysWlayerId,jdbcType=VARCHAR},
+      sys_m2layer_id = #{record.sysM2layerId,jdbcType=VARCHAR},
+      sys_wlayer_name = #{record.sysWlayerName,jdbcType=VARCHAR},
+      sys_wlayer_tag = #{record.sysWlayerTag,jdbcType=VARCHAR},
+      sys_wlayer_http = #{record.sysWlayerHttp,jdbcType=VARCHAR},
+      sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{record.sysRemark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pro.exp.dao.entity.SysWlayer" >
+    update sys_wlayer
+    <set >
+      <if test="sysM2layerId != null" >
+        sys_m2layer_id = #{sysM2layerId,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerName != null" >
+        sys_wlayer_name = #{sysWlayerName,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerTag != null" >
+        sys_wlayer_tag = #{sysWlayerTag,jdbcType=VARCHAR},
+      </if>
+      <if test="sysWlayerHttp != null" >
+        sys_wlayer_http = #{sysWlayerHttp,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sys_wlayer_id = #{sysWlayerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pro.exp.dao.entity.SysWlayer" >
+    update sys_wlayer
+    set sys_m2layer_id = #{sysM2layerId,jdbcType=VARCHAR},
+      sys_wlayer_name = #{sysWlayerName,jdbcType=VARCHAR},
+      sys_wlayer_tag = #{sysWlayerTag,jdbcType=VARCHAR},
+      sys_wlayer_http = #{sysWlayerHttp,jdbcType=VARCHAR},
+      sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{sysRemark,jdbcType=VARCHAR}
+    where sys_wlayer_id = #{sysWlayerId,jdbcType=VARCHAR}
+  </update>
+</mapper>

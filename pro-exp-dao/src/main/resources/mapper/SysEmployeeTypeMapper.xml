@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.exp.dao.interfaces.SysEmployeeTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pro.exp.dao.entity.SysEmployeeType" >
+    <id column="sys_employee_type_id" property="sysEmployeeTypeId" jdbcType="VARCHAR" />
+    <result column="sys_employee_type_name" property="sysEmployeeTypeName" jdbcType="VARCHAR" />
+    <result column="sys_employee_type_code" property="sysEmployeeTypeCode" jdbcType="VARCHAR" />
+    <result column="sys_employee_type_flag" property="sysEmployeeTypeFlag" jdbcType="VARCHAR" />
+    <result column="sys_isactive" property="sysIsactive" jdbcType="VARCHAR" />
+    <result column="sys_created" property="sysCreated" jdbcType="TIMESTAMP" />
+    <result column="sys_createdby" property="sysCreatedby" jdbcType="VARCHAR" />
+    <result column="sys_updated" property="sysUpdated" jdbcType="TIMESTAMP" />
+    <result column="sys_updatedby" property="sysUpdatedby" jdbcType="VARCHAR" />
+    <result column="sys_remark" property="sysRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    sys_employee_type_id, sys_employee_type_name, sys_employee_type_code, sys_employee_type_flag, 
+    sys_isactive, sys_created, sys_createdby, sys_updated, sys_updatedby, sys_remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pro.exp.dao.entity.SysEmployeeTypeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_employee_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_employee_type
+    where sys_employee_type_id = #{sysEmployeeTypeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_employee_type
+    where sys_employee_type_id = #{sysEmployeeTypeId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pro.exp.dao.entity.SysEmployeeTypeExample" >
+    delete from sys_employee_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pro.exp.dao.entity.SysEmployeeType" >
+    insert into sys_employee_type (sys_employee_type_id, sys_employee_type_name, 
+      sys_employee_type_code, sys_employee_type_flag, 
+      sys_isactive, sys_created, sys_createdby, 
+      sys_updated, sys_updatedby, sys_remark
+      )
+    values (#{sysEmployeeTypeId,jdbcType=VARCHAR}, #{sysEmployeeTypeName,jdbcType=VARCHAR}, 
+      #{sysEmployeeTypeCode,jdbcType=VARCHAR}, #{sysEmployeeTypeFlag,jdbcType=VARCHAR}, 
+      #{sysIsactive,jdbcType=VARCHAR}, #{sysCreated,jdbcType=TIMESTAMP}, #{sysCreatedby,jdbcType=VARCHAR}, 
+      #{sysUpdated,jdbcType=TIMESTAMP}, #{sysUpdatedby,jdbcType=VARCHAR}, #{sysRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pro.exp.dao.entity.SysEmployeeType" >
+    insert into sys_employee_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysEmployeeTypeId != null" >
+        sys_employee_type_id,
+      </if>
+      <if test="sysEmployeeTypeName != null" >
+        sys_employee_type_name,
+      </if>
+      <if test="sysEmployeeTypeCode != null" >
+        sys_employee_type_code,
+      </if>
+      <if test="sysEmployeeTypeFlag != null" >
+        sys_employee_type_flag,
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive,
+      </if>
+      <if test="sysCreated != null" >
+        sys_created,
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby,
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated,
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby,
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysEmployeeTypeId != null" >
+        #{sysEmployeeTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="sysEmployeeTypeName != null" >
+        #{sysEmployeeTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="sysEmployeeTypeCode != null" >
+        #{sysEmployeeTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sysEmployeeTypeFlag != null" >
+        #{sysEmployeeTypeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        #{sysRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pro.exp.dao.entity.SysEmployeeTypeExample" resultType="java.lang.Integer" >
+    select count(*) from sys_employee_type
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_employee_type
+    <set >
+      <if test="record.sysEmployeeTypeId != null" >
+        sys_employee_type_id = #{record.sysEmployeeTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysEmployeeTypeName != null" >
+        sys_employee_type_name = #{record.sysEmployeeTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysEmployeeTypeCode != null" >
+        sys_employee_type_code = #{record.sysEmployeeTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysEmployeeTypeFlag != null" >
+        sys_employee_type_flag = #{record.sysEmployeeTypeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysIsactive != null" >
+        sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysCreated != null" >
+        sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysCreatedby != null" >
+        sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysUpdated != null" >
+        sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysUpdatedby != null" >
+        sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysRemark != null" >
+        sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_employee_type
+    set sys_employee_type_id = #{record.sysEmployeeTypeId,jdbcType=VARCHAR},
+      sys_employee_type_name = #{record.sysEmployeeTypeName,jdbcType=VARCHAR},
+      sys_employee_type_code = #{record.sysEmployeeTypeCode,jdbcType=VARCHAR},
+      sys_employee_type_flag = #{record.sysEmployeeTypeFlag,jdbcType=VARCHAR},
+      sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{record.sysRemark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pro.exp.dao.entity.SysEmployeeType" >
+    update sys_employee_type
+    <set >
+      <if test="sysEmployeeTypeName != null" >
+        sys_employee_type_name = #{sysEmployeeTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="sysEmployeeTypeCode != null" >
+        sys_employee_type_code = #{sysEmployeeTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sysEmployeeTypeFlag != null" >
+        sys_employee_type_flag = #{sysEmployeeTypeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sys_employee_type_id = #{sysEmployeeTypeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pro.exp.dao.entity.SysEmployeeType" >
+    update sys_employee_type
+    set sys_employee_type_name = #{sysEmployeeTypeName,jdbcType=VARCHAR},
+      sys_employee_type_code = #{sysEmployeeTypeCode,jdbcType=VARCHAR},
+      sys_employee_type_flag = #{sysEmployeeTypeFlag,jdbcType=VARCHAR},
+      sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{sysRemark,jdbcType=VARCHAR}
+    where sys_employee_type_id = #{sysEmployeeTypeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

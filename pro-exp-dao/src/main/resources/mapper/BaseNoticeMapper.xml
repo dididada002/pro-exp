@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.exp.dao.interfaces.BaseNoticeMapper" >
+  <resultMap id="BaseResultMap" type="com.pro.exp.dao.entity.BaseNotice" >
+    <id column="base_notice_id" property="baseNoticeId" jdbcType="VARCHAR" />
+    <result column="base_notice_name" property="baseNoticeName" jdbcType="VARCHAR" />
+    <result column="base_notice_title" property="baseNoticeTitle" jdbcType="VARCHAR" />
+    <result column="base_notice_text" property="baseNoticeText" jdbcType="VARCHAR" />
+    <result column="target_sys_company_ids" property="targetSysCompanyIds" jdbcType="VARCHAR" />
+    <result column="target_sys_department_ids" property="targetSysDepartmentIds" jdbcType="VARCHAR" />
+    <result column="target_sys_unit_ids" property="targetSysUnitIds" jdbcType="VARCHAR" />
+    <result column="target_sys_employee_ids" property="targetSysEmployeeIds" jdbcType="VARCHAR" />
+    <result column="sys_isactive" property="sysIsactive" jdbcType="VARCHAR" />
+    <result column="sys_created" property="sysCreated" jdbcType="TIMESTAMP" />
+    <result column="sys_createdby" property="sysCreatedby" jdbcType="VARCHAR" />
+    <result column="sys_updated" property="sysUpdated" jdbcType="TIMESTAMP" />
+    <result column="sys_updatedby" property="sysUpdatedby" jdbcType="VARCHAR" />
+    <result column="sys_remark" property="sysRemark" jdbcType="VARCHAR" />
+    <result column="base_notice_type_id" property="baseNoticeTypeId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    base_notice_id, base_notice_name, base_notice_title, base_notice_text, target_sys_company_ids, 
+    target_sys_department_ids, target_sys_unit_ids, target_sys_employee_ids, sys_isactive, 
+    sys_created, sys_createdby, sys_updated, sys_updatedby, sys_remark, base_notice_type_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pro.exp.dao.entity.BaseNoticeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from base_notice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_notice
+    where base_notice_id = #{baseNoticeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from base_notice
+    where base_notice_id = #{baseNoticeId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pro.exp.dao.entity.BaseNoticeExample" >
+    delete from base_notice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pro.exp.dao.entity.BaseNotice" >
+    insert into base_notice (base_notice_id, base_notice_name, base_notice_title, 
+      base_notice_text, target_sys_company_ids, target_sys_department_ids, 
+      target_sys_unit_ids, target_sys_employee_ids, 
+      sys_isactive, sys_created, sys_createdby, 
+      sys_updated, sys_updatedby, sys_remark, 
+      base_notice_type_id)
+    values (#{baseNoticeId,jdbcType=VARCHAR}, #{baseNoticeName,jdbcType=VARCHAR}, #{baseNoticeTitle,jdbcType=VARCHAR}, 
+      #{baseNoticeText,jdbcType=VARCHAR}, #{targetSysCompanyIds,jdbcType=VARCHAR}, #{targetSysDepartmentIds,jdbcType=VARCHAR}, 
+      #{targetSysUnitIds,jdbcType=VARCHAR}, #{targetSysEmployeeIds,jdbcType=VARCHAR}, 
+      #{sysIsactive,jdbcType=VARCHAR}, #{sysCreated,jdbcType=TIMESTAMP}, #{sysCreatedby,jdbcType=VARCHAR}, 
+      #{sysUpdated,jdbcType=TIMESTAMP}, #{sysUpdatedby,jdbcType=VARCHAR}, #{sysRemark,jdbcType=VARCHAR}, 
+      #{baseNoticeTypeId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pro.exp.dao.entity.BaseNotice" >
+    insert into base_notice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="baseNoticeId != null" >
+        base_notice_id,
+      </if>
+      <if test="baseNoticeName != null" >
+        base_notice_name,
+      </if>
+      <if test="baseNoticeTitle != null" >
+        base_notice_title,
+      </if>
+      <if test="baseNoticeText != null" >
+        base_notice_text,
+      </if>
+      <if test="targetSysCompanyIds != null" >
+        target_sys_company_ids,
+      </if>
+      <if test="targetSysDepartmentIds != null" >
+        target_sys_department_ids,
+      </if>
+      <if test="targetSysUnitIds != null" >
+        target_sys_unit_ids,
+      </if>
+      <if test="targetSysEmployeeIds != null" >
+        target_sys_employee_ids,
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive,
+      </if>
+      <if test="sysCreated != null" >
+        sys_created,
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby,
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated,
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby,
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark,
+      </if>
+      <if test="baseNoticeTypeId != null" >
+        base_notice_type_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="baseNoticeId != null" >
+        #{baseNoticeId,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeName != null" >
+        #{baseNoticeName,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeTitle != null" >
+        #{baseNoticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeText != null" >
+        #{baseNoticeText,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysCompanyIds != null" >
+        #{targetSysCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysDepartmentIds != null" >
+        #{targetSysDepartmentIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysUnitIds != null" >
+        #{targetSysUnitIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysEmployeeIds != null" >
+        #{targetSysEmployeeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        #{sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeTypeId != null" >
+        #{baseNoticeTypeId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pro.exp.dao.entity.BaseNoticeExample" resultType="java.lang.Integer" >
+    select count(*) from base_notice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update base_notice
+    <set >
+      <if test="record.baseNoticeId != null" >
+        base_notice_id = #{record.baseNoticeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.baseNoticeName != null" >
+        base_notice_name = #{record.baseNoticeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.baseNoticeTitle != null" >
+        base_notice_title = #{record.baseNoticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.baseNoticeText != null" >
+        base_notice_text = #{record.baseNoticeText,jdbcType=VARCHAR},
+      </if>
+      <if test="record.targetSysCompanyIds != null" >
+        target_sys_company_ids = #{record.targetSysCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.targetSysDepartmentIds != null" >
+        target_sys_department_ids = #{record.targetSysDepartmentIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.targetSysUnitIds != null" >
+        target_sys_unit_ids = #{record.targetSysUnitIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.targetSysEmployeeIds != null" >
+        target_sys_employee_ids = #{record.targetSysEmployeeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysIsactive != null" >
+        sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysCreated != null" >
+        sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysCreatedby != null" >
+        sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysUpdated != null" >
+        sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sysUpdatedby != null" >
+        sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysRemark != null" >
+        sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.baseNoticeTypeId != null" >
+        base_notice_type_id = #{record.baseNoticeTypeId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update base_notice
+    set base_notice_id = #{record.baseNoticeId,jdbcType=VARCHAR},
+      base_notice_name = #{record.baseNoticeName,jdbcType=VARCHAR},
+      base_notice_title = #{record.baseNoticeTitle,jdbcType=VARCHAR},
+      base_notice_text = #{record.baseNoticeText,jdbcType=VARCHAR},
+      target_sys_company_ids = #{record.targetSysCompanyIds,jdbcType=VARCHAR},
+      target_sys_department_ids = #{record.targetSysDepartmentIds,jdbcType=VARCHAR},
+      target_sys_unit_ids = #{record.targetSysUnitIds,jdbcType=VARCHAR},
+      target_sys_employee_ids = #{record.targetSysEmployeeIds,jdbcType=VARCHAR},
+      sys_isactive = #{record.sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{record.sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{record.sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{record.sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{record.sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{record.sysRemark,jdbcType=VARCHAR},
+      base_notice_type_id = #{record.baseNoticeTypeId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pro.exp.dao.entity.BaseNotice" >
+    update base_notice
+    <set >
+      <if test="baseNoticeName != null" >
+        base_notice_name = #{baseNoticeName,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeTitle != null" >
+        base_notice_title = #{baseNoticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeText != null" >
+        base_notice_text = #{baseNoticeText,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysCompanyIds != null" >
+        target_sys_company_ids = #{targetSysCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysDepartmentIds != null" >
+        target_sys_department_ids = #{targetSysDepartmentIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysUnitIds != null" >
+        target_sys_unit_ids = #{targetSysUnitIds,jdbcType=VARCHAR},
+      </if>
+      <if test="targetSysEmployeeIds != null" >
+        target_sys_employee_ids = #{targetSysEmployeeIds,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsactive != null" >
+        sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      </if>
+      <if test="sysCreated != null" >
+        sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysCreatedby != null" >
+        sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysUpdated != null" >
+        sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUpdatedby != null" >
+        sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      </if>
+      <if test="sysRemark != null" >
+        sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="baseNoticeTypeId != null" >
+        base_notice_type_id = #{baseNoticeTypeId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where base_notice_id = #{baseNoticeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pro.exp.dao.entity.BaseNotice" >
+    update base_notice
+    set base_notice_name = #{baseNoticeName,jdbcType=VARCHAR},
+      base_notice_title = #{baseNoticeTitle,jdbcType=VARCHAR},
+      base_notice_text = #{baseNoticeText,jdbcType=VARCHAR},
+      target_sys_company_ids = #{targetSysCompanyIds,jdbcType=VARCHAR},
+      target_sys_department_ids = #{targetSysDepartmentIds,jdbcType=VARCHAR},
+      target_sys_unit_ids = #{targetSysUnitIds,jdbcType=VARCHAR},
+      target_sys_employee_ids = #{targetSysEmployeeIds,jdbcType=VARCHAR},
+      sys_isactive = #{sysIsactive,jdbcType=VARCHAR},
+      sys_created = #{sysCreated,jdbcType=TIMESTAMP},
+      sys_createdby = #{sysCreatedby,jdbcType=VARCHAR},
+      sys_updated = #{sysUpdated,jdbcType=TIMESTAMP},
+      sys_updatedby = #{sysUpdatedby,jdbcType=VARCHAR},
+      sys_remark = #{sysRemark,jdbcType=VARCHAR},
+      base_notice_type_id = #{baseNoticeTypeId,jdbcType=VARCHAR}
+    where base_notice_id = #{baseNoticeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

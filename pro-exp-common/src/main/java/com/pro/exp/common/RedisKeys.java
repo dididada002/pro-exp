@@ -33,4 +33,8 @@ public class RedisKeys {
      * 用户所选的角色信息。
      */
     public static final String USER_ROLE = "ROLE:";
+    /**
+     * 用户注册时校验信息
+     * */
+    public static final String USER_SIGN_IN_CHECK = "SIGNIN:CHECKCODE:";
 }
