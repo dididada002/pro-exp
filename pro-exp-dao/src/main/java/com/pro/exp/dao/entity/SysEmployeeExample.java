@@ -385,73 +385,953 @@ public class SysEmployeeExample {
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberIsNull() {
-            addCriterion("sys_employee_number is null");
+        public Criteria andSysEmployeeNameBeforeIsNull() {
+            addCriterion("sys_employee_name_before is null");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberIsNotNull() {
-            addCriterion("sys_employee_number is not null");
+        public Criteria andSysEmployeeNameBeforeIsNotNull() {
+            addCriterion("sys_employee_name_before is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberEqualTo(String value) {
-            addCriterion("sys_employee_number =", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeEqualTo(String value) {
+            addCriterion("sys_employee_name_before =", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberNotEqualTo(String value) {
-            addCriterion("sys_employee_number <>", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeNotEqualTo(String value) {
+            addCriterion("sys_employee_name_before <>", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberGreaterThan(String value) {
-            addCriterion("sys_employee_number >", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeGreaterThan(String value) {
+            addCriterion("sys_employee_name_before >", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberGreaterThanOrEqualTo(String value) {
-            addCriterion("sys_employee_number >=", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_name_before >=", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberLessThan(String value) {
-            addCriterion("sys_employee_number <", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeLessThan(String value) {
+            addCriterion("sys_employee_name_before <", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberLessThanOrEqualTo(String value) {
-            addCriterion("sys_employee_number <=", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_name_before <=", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberLike(String value) {
-            addCriterion("sys_employee_number like", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeLike(String value) {
+            addCriterion("sys_employee_name_before like", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberNotLike(String value) {
-            addCriterion("sys_employee_number not like", value, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeNotLike(String value) {
+            addCriterion("sys_employee_name_before not like", value, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberIn(List<String> values) {
-            addCriterion("sys_employee_number in", values, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeIn(List<String> values) {
+            addCriterion("sys_employee_name_before in", values, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberNotIn(List<String> values) {
-            addCriterion("sys_employee_number not in", values, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeNotIn(List<String> values) {
+            addCriterion("sys_employee_name_before not in", values, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberBetween(String value1, String value2) {
-            addCriterion("sys_employee_number between", value1, value2, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeBetween(String value1, String value2) {
+            addCriterion("sys_employee_name_before between", value1, value2, "sysEmployeeNameBefore");
             return (Criteria) this;
         }
 
-        public Criteria andSysEmployeeNumberNotBetween(String value1, String value2) {
-            addCriterion("sys_employee_number not between", value1, value2, "sysEmployeeNumber");
+        public Criteria andSysEmployeeNameBeforeNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_name_before not between", value1, value2, "sysEmployeeNameBefore");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayIsNull() {
+            addCriterion("sys_employee_birthday is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayIsNotNull() {
+            addCriterion("sys_employee_birthday is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayEqualTo(Date value) {
+            addCriterion("sys_employee_birthday =", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayNotEqualTo(Date value) {
+            addCriterion("sys_employee_birthday <>", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayGreaterThan(Date value) {
+            addCriterion("sys_employee_birthday >", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayGreaterThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_birthday >=", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayLessThan(Date value) {
+            addCriterion("sys_employee_birthday <", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayLessThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_birthday <=", value, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayIn(List<Date> values) {
+            addCriterion("sys_employee_birthday in", values, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayNotIn(List<Date> values) {
+            addCriterion("sys_employee_birthday not in", values, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_birthday between", value1, value2, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeBirthdayNotBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_birthday not between", value1, value2, "sysEmployeeBirthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationIsNull() {
+            addCriterion("sys_employee_nation is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationIsNotNull() {
+            addCriterion("sys_employee_nation is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationEqualTo(String value) {
+            addCriterion("sys_employee_nation =", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationNotEqualTo(String value) {
+            addCriterion("sys_employee_nation <>", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationGreaterThan(String value) {
+            addCriterion("sys_employee_nation >", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_nation >=", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationLessThan(String value) {
+            addCriterion("sys_employee_nation <", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_nation <=", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationLike(String value) {
+            addCriterion("sys_employee_nation like", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationNotLike(String value) {
+            addCriterion("sys_employee_nation not like", value, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationIn(List<String> values) {
+            addCriterion("sys_employee_nation in", values, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationNotIn(List<String> values) {
+            addCriterion("sys_employee_nation not in", values, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationBetween(String value1, String value2) {
+            addCriterion("sys_employee_nation between", value1, value2, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNationNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_nation not between", value1, value2, "sysEmployeeNation");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeIsNull() {
+            addCriterion("sys_employee_household_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeIsNotNull() {
+            addCriterion("sys_employee_household_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeEqualTo(String value) {
+            addCriterion("sys_employee_household_type =", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeNotEqualTo(String value) {
+            addCriterion("sys_employee_household_type <>", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeGreaterThan(String value) {
+            addCriterion("sys_employee_household_type >", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_household_type >=", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeLessThan(String value) {
+            addCriterion("sys_employee_household_type <", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_household_type <=", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeLike(String value) {
+            addCriterion("sys_employee_household_type like", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeNotLike(String value) {
+            addCriterion("sys_employee_household_type not like", value, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeIn(List<String> values) {
+            addCriterion("sys_employee_household_type in", values, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeNotIn(List<String> values) {
+            addCriterion("sys_employee_household_type not in", values, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeBetween(String value1, String value2) {
+            addCriterion("sys_employee_household_type between", value1, value2, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdTypeNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_household_type not between", value1, value2, "sysEmployeeHouseholdType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryIsNull() {
+            addCriterion("sys_employee_marry is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryIsNotNull() {
+            addCriterion("sys_employee_marry is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryEqualTo(String value) {
+            addCriterion("sys_employee_marry =", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryNotEqualTo(String value) {
+            addCriterion("sys_employee_marry <>", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryGreaterThan(String value) {
+            addCriterion("sys_employee_marry >", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_marry >=", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryLessThan(String value) {
+            addCriterion("sys_employee_marry <", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_marry <=", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryLike(String value) {
+            addCriterion("sys_employee_marry like", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryNotLike(String value) {
+            addCriterion("sys_employee_marry not like", value, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryIn(List<String> values) {
+            addCriterion("sys_employee_marry in", values, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryNotIn(List<String> values) {
+            addCriterion("sys_employee_marry not in", values, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryBetween(String value1, String value2) {
+            addCriterion("sys_employee_marry between", value1, value2, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeMarryNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_marry not between", value1, value2, "sysEmployeeMarry");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceIsNull() {
+            addCriterion("sys_employee_native_place is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceIsNotNull() {
+            addCriterion("sys_employee_native_place is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceEqualTo(String value) {
+            addCriterion("sys_employee_native_place =", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceNotEqualTo(String value) {
+            addCriterion("sys_employee_native_place <>", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceGreaterThan(String value) {
+            addCriterion("sys_employee_native_place >", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_native_place >=", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceLessThan(String value) {
+            addCriterion("sys_employee_native_place <", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_native_place <=", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceLike(String value) {
+            addCriterion("sys_employee_native_place like", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceNotLike(String value) {
+            addCriterion("sys_employee_native_place not like", value, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceIn(List<String> values) {
+            addCriterion("sys_employee_native_place in", values, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceNotIn(List<String> values) {
+            addCriterion("sys_employee_native_place not in", values, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceBetween(String value1, String value2) {
+            addCriterion("sys_employee_native_place between", value1, value2, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeNativePlaceNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_native_place not between", value1, value2, "sysEmployeeNativePlace");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrIsNull() {
+            addCriterion("sys_employee_household_addr is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrIsNotNull() {
+            addCriterion("sys_employee_household_addr is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrEqualTo(String value) {
+            addCriterion("sys_employee_household_addr =", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrNotEqualTo(String value) {
+            addCriterion("sys_employee_household_addr <>", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrGreaterThan(String value) {
+            addCriterion("sys_employee_household_addr >", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_household_addr >=", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrLessThan(String value) {
+            addCriterion("sys_employee_household_addr <", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_household_addr <=", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrLike(String value) {
+            addCriterion("sys_employee_household_addr like", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrNotLike(String value) {
+            addCriterion("sys_employee_household_addr not like", value, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrIn(List<String> values) {
+            addCriterion("sys_employee_household_addr in", values, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrNotIn(List<String> values) {
+            addCriterion("sys_employee_household_addr not in", values, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrBetween(String value1, String value2) {
+            addCriterion("sys_employee_household_addr between", value1, value2, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeHouseholdAddrNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_household_addr not between", value1, value2, "sysEmployeeHouseholdAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrIsNull() {
+            addCriterion("sys_employee_live_addr is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrIsNotNull() {
+            addCriterion("sys_employee_live_addr is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrEqualTo(String value) {
+            addCriterion("sys_employee_live_addr =", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrNotEqualTo(String value) {
+            addCriterion("sys_employee_live_addr <>", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrGreaterThan(String value) {
+            addCriterion("sys_employee_live_addr >", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_live_addr >=", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrLessThan(String value) {
+            addCriterion("sys_employee_live_addr <", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_live_addr <=", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrLike(String value) {
+            addCriterion("sys_employee_live_addr like", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrNotLike(String value) {
+            addCriterion("sys_employee_live_addr not like", value, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrIn(List<String> values) {
+            addCriterion("sys_employee_live_addr in", values, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrNotIn(List<String> values) {
+            addCriterion("sys_employee_live_addr not in", values, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrBetween(String value1, String value2) {
+            addCriterion("sys_employee_live_addr between", value1, value2, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeLiveAddrNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_live_addr not between", value1, value2, "sysEmployeeLiveAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticIsNull() {
+            addCriterion("sys_employee_politic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticIsNotNull() {
+            addCriterion("sys_employee_politic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticEqualTo(String value) {
+            addCriterion("sys_employee_politic =", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticNotEqualTo(String value) {
+            addCriterion("sys_employee_politic <>", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticGreaterThan(String value) {
+            addCriterion("sys_employee_politic >", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_politic >=", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticLessThan(String value) {
+            addCriterion("sys_employee_politic <", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_politic <=", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticLike(String value) {
+            addCriterion("sys_employee_politic like", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticNotLike(String value) {
+            addCriterion("sys_employee_politic not like", value, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticIn(List<String> values) {
+            addCriterion("sys_employee_politic in", values, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticNotIn(List<String> values) {
+            addCriterion("sys_employee_politic not in", values, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticBetween(String value1, String value2) {
+            addCriterion("sys_employee_politic between", value1, value2, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeePoliticNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_politic not between", value1, value2, "sysEmployeePolitic");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpIsNull() {
+            addCriterion("sys_employee_up is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpIsNotNull() {
+            addCriterion("sys_employee_up is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpEqualTo(String value) {
+            addCriterion("sys_employee_up =", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpNotEqualTo(String value) {
+            addCriterion("sys_employee_up <>", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpGreaterThan(String value) {
+            addCriterion("sys_employee_up >", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_up >=", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpLessThan(String value) {
+            addCriterion("sys_employee_up <", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_up <=", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpLike(String value) {
+            addCriterion("sys_employee_up like", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpNotLike(String value) {
+            addCriterion("sys_employee_up not like", value, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpIn(List<String> values) {
+            addCriterion("sys_employee_up in", values, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpNotIn(List<String> values) {
+            addCriterion("sys_employee_up not in", values, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpBetween(String value1, String value2) {
+            addCriterion("sys_employee_up between", value1, value2, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeUpNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_up not between", value1, value2, "sysEmployeeUp");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrIsNull() {
+            addCriterion("sys_employee_work_addr is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrIsNotNull() {
+            addCriterion("sys_employee_work_addr is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrEqualTo(String value) {
+            addCriterion("sys_employee_work_addr =", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrNotEqualTo(String value) {
+            addCriterion("sys_employee_work_addr <>", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrGreaterThan(String value) {
+            addCriterion("sys_employee_work_addr >", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_work_addr >=", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrLessThan(String value) {
+            addCriterion("sys_employee_work_addr <", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_work_addr <=", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrLike(String value) {
+            addCriterion("sys_employee_work_addr like", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrNotLike(String value) {
+            addCriterion("sys_employee_work_addr not like", value, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrIn(List<String> values) {
+            addCriterion("sys_employee_work_addr in", values, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrNotIn(List<String> values) {
+            addCriterion("sys_employee_work_addr not in", values, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrBetween(String value1, String value2) {
+            addCriterion("sys_employee_work_addr between", value1, value2, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkAddrNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_work_addr not between", value1, value2, "sysEmployeeWorkAddr");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileIsNull() {
+            addCriterion("sys_employee_work_mobile is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileIsNotNull() {
+            addCriterion("sys_employee_work_mobile is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileEqualTo(String value) {
+            addCriterion("sys_employee_work_mobile =", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileNotEqualTo(String value) {
+            addCriterion("sys_employee_work_mobile <>", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileGreaterThan(String value) {
+            addCriterion("sys_employee_work_mobile >", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileGreaterThanOrEqualTo(String value) {
+            addCriterion("sys_employee_work_mobile >=", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileLessThan(String value) {
+            addCriterion("sys_employee_work_mobile <", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileLessThanOrEqualTo(String value) {
+            addCriterion("sys_employee_work_mobile <=", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileLike(String value) {
+            addCriterion("sys_employee_work_mobile like", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileNotLike(String value) {
+            addCriterion("sys_employee_work_mobile not like", value, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileIn(List<String> values) {
+            addCriterion("sys_employee_work_mobile in", values, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileNotIn(List<String> values) {
+            addCriterion("sys_employee_work_mobile not in", values, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileBetween(String value1, String value2) {
+            addCriterion("sys_employee_work_mobile between", value1, value2, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeWorkMobileNotBetween(String value1, String value2) {
+            addCriterion("sys_employee_work_mobile not between", value1, value2, "sysEmployeeWorkMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateIsNull() {
+            addCriterion("sys_employee_entry_date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateIsNotNull() {
+            addCriterion("sys_employee_entry_date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateEqualTo(Date value) {
+            addCriterion("sys_employee_entry_date =", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateNotEqualTo(Date value) {
+            addCriterion("sys_employee_entry_date <>", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateGreaterThan(Date value) {
+            addCriterion("sys_employee_entry_date >", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_entry_date >=", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateLessThan(Date value) {
+            addCriterion("sys_employee_entry_date <", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateLessThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_entry_date <=", value, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateIn(List<Date> values) {
+            addCriterion("sys_employee_entry_date in", values, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateNotIn(List<Date> values) {
+            addCriterion("sys_employee_entry_date not in", values, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_entry_date between", value1, value2, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeEntryDateNotBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_entry_date not between", value1, value2, "sysEmployeeEntryDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateIsNull() {
+            addCriterion("sys_employee_confirm_date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateIsNotNull() {
+            addCriterion("sys_employee_confirm_date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateEqualTo(Date value) {
+            addCriterion("sys_employee_confirm_date =", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateNotEqualTo(Date value) {
+            addCriterion("sys_employee_confirm_date <>", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateGreaterThan(Date value) {
+            addCriterion("sys_employee_confirm_date >", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_confirm_date >=", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateLessThan(Date value) {
+            addCriterion("sys_employee_confirm_date <", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateLessThanOrEqualTo(Date value) {
+            addCriterion("sys_employee_confirm_date <=", value, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateIn(List<Date> values) {
+            addCriterion("sys_employee_confirm_date in", values, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateNotIn(List<Date> values) {
+            addCriterion("sys_employee_confirm_date not in", values, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_confirm_date between", value1, value2, "sysEmployeeConfirmDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysEmployeeConfirmDateNotBetween(Date value1, Date value2) {
+            addCriterion("sys_employee_confirm_date not between", value1, value2, "sysEmployeeConfirmDate");
             return (Criteria) this;
         }
 

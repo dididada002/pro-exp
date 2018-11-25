@@ -11,7 +11,33 @@ public class SysEmployee {
 
     private String idCard;
 
-    private String sysEmployeeNumber;
+    private String sysEmployeeNameBefore;
+
+    private Date sysEmployeeBirthday;
+
+    private String sysEmployeeNation;
+
+    private String sysEmployeeHouseholdType;
+
+    private String sysEmployeeMarry;
+
+    private String sysEmployeeNativePlace;
+
+    private String sysEmployeeHouseholdAddr;
+
+    private String sysEmployeeLiveAddr;
+
+    private String sysEmployeePolitic;
+
+    private String sysEmployeeUp;
+
+    private String sysEmployeeWorkAddr;
+
+    private String sysEmployeeWorkMobile;
+
+    private Date sysEmployeeEntryDate;
+
+    private Date sysEmployeeConfirmDate;
 
     private String sysPostId;
 
@@ -75,12 +101,116 @@ public class SysEmployee {
         this.idCard = idCard == null ? null : idCard.trim();
     }
 
-    public String getSysEmployeeNumber() {
-        return sysEmployeeNumber;
+    public String getSysEmployeeNameBefore() {
+        return sysEmployeeNameBefore;
     }
 
-    public void setSysEmployeeNumber(String sysEmployeeNumber) {
-        this.sysEmployeeNumber = sysEmployeeNumber == null ? null : sysEmployeeNumber.trim();
+    public void setSysEmployeeNameBefore(String sysEmployeeNameBefore) {
+        this.sysEmployeeNameBefore = sysEmployeeNameBefore == null ? null : sysEmployeeNameBefore.trim();
+    }
+
+    public Date getSysEmployeeBirthday() {
+        return sysEmployeeBirthday;
+    }
+
+    public void setSysEmployeeBirthday(Date sysEmployeeBirthday) {
+        this.sysEmployeeBirthday = sysEmployeeBirthday;
+    }
+
+    public String getSysEmployeeNation() {
+        return sysEmployeeNation;
+    }
+
+    public void setSysEmployeeNation(String sysEmployeeNation) {
+        this.sysEmployeeNation = sysEmployeeNation == null ? null : sysEmployeeNation.trim();
+    }
+
+    public String getSysEmployeeHouseholdType() {
+        return sysEmployeeHouseholdType;
+    }
+
+    public void setSysEmployeeHouseholdType(String sysEmployeeHouseholdType) {
+        this.sysEmployeeHouseholdType = sysEmployeeHouseholdType == null ? null : sysEmployeeHouseholdType.trim();
+    }
+
+    public String getSysEmployeeMarry() {
+        return sysEmployeeMarry;
+    }
+
+    public void setSysEmployeeMarry(String sysEmployeeMarry) {
+        this.sysEmployeeMarry = sysEmployeeMarry == null ? null : sysEmployeeMarry.trim();
+    }
+
+    public String getSysEmployeeNativePlace() {
+        return sysEmployeeNativePlace;
+    }
+
+    public void setSysEmployeeNativePlace(String sysEmployeeNativePlace) {
+        this.sysEmployeeNativePlace = sysEmployeeNativePlace == null ? null : sysEmployeeNativePlace.trim();
+    }
+
+    public String getSysEmployeeHouseholdAddr() {
+        return sysEmployeeHouseholdAddr;
+    }
+
+    public void setSysEmployeeHouseholdAddr(String sysEmployeeHouseholdAddr) {
+        this.sysEmployeeHouseholdAddr = sysEmployeeHouseholdAddr == null ? null : sysEmployeeHouseholdAddr.trim();
+    }
+
+    public String getSysEmployeeLiveAddr() {
+        return sysEmployeeLiveAddr;
+    }
+
+    public void setSysEmployeeLiveAddr(String sysEmployeeLiveAddr) {
+        this.sysEmployeeLiveAddr = sysEmployeeLiveAddr == null ? null : sysEmployeeLiveAddr.trim();
+    }
+
+    public String getSysEmployeePolitic() {
+        return sysEmployeePolitic;
+    }
+
+    public void setSysEmployeePolitic(String sysEmployeePolitic) {
+        this.sysEmployeePolitic = sysEmployeePolitic == null ? null : sysEmployeePolitic.trim();
+    }
+
+    public String getSysEmployeeUp() {
+        return sysEmployeeUp;
+    }
+
+    public void setSysEmployeeUp(String sysEmployeeUp) {
+        this.sysEmployeeUp = sysEmployeeUp == null ? null : sysEmployeeUp.trim();
+    }
+
+    public String getSysEmployeeWorkAddr() {
+        return sysEmployeeWorkAddr;
+    }
+
+    public void setSysEmployeeWorkAddr(String sysEmployeeWorkAddr) {
+        this.sysEmployeeWorkAddr = sysEmployeeWorkAddr == null ? null : sysEmployeeWorkAddr.trim();
+    }
+
+    public String getSysEmployeeWorkMobile() {
+        return sysEmployeeWorkMobile;
+    }
+
+    public void setSysEmployeeWorkMobile(String sysEmployeeWorkMobile) {
+        this.sysEmployeeWorkMobile = sysEmployeeWorkMobile == null ? null : sysEmployeeWorkMobile.trim();
+    }
+
+    public Date getSysEmployeeEntryDate() {
+        return sysEmployeeEntryDate;
+    }
+
+    public void setSysEmployeeEntryDate(Date sysEmployeeEntryDate) {
+        this.sysEmployeeEntryDate = sysEmployeeEntryDate;
+    }
+
+    public Date getSysEmployeeConfirmDate() {
+        return sysEmployeeConfirmDate;
+    }
+
+    public void setSysEmployeeConfirmDate(Date sysEmployeeConfirmDate) {
+        this.sysEmployeeConfirmDate = sysEmployeeConfirmDate;
     }
 
     public String getSysPostId() {

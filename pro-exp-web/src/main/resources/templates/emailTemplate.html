@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div class="content">
+    请点击以下链接进行注册：<!--/*@thymesVar id="code" type="jdk"*/-->
+    <a th:href="${code}" th:text="${code}"></a>，此验证码用于账户注册，十分钟内有效。如非本人操作，请忽略本邮件【XXX公司】
+</div>
+</body>
+</html>
