@@ -21,4 +21,28 @@ public class BaseSelectForm extends BaseNewPageModel {
 
     @ApiModelProperty(value = "排序类型字段")
     private List<SelectOrderBy> orderByValueAndType;
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public List<SelectExampleForm> getSelectExampleForms() {
+        return selectExampleForms;
+    }
+
+    public void setSelectExampleForms(List<SelectExampleForm> selectExampleForms) {
+        this.selectExampleForms = selectExampleForms;
+    }
+
+    public List<SelectOrderBy> getOrderByValueAndType() {
+        return orderByValueAndType;
+    }
+
+    public void setOrderByValueAndType(List<SelectOrderBy> orderByValueAndType) {
+        this.orderByValueAndType = orderByValueAndType;
+    }
 }

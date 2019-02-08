@@ -3,8 +3,6 @@ package com.pro.exp.service.utils;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
-import com.hejun.lib.util.Base64Util;
-import com.hejun.lib.util.StringUtils;
 import com.pro.exp.common.Constants;
 import org.springframework.util.CollectionUtils;
 

@@ -1,10 +1,9 @@
 package com.pro.proexpweb.controller.base;
 
 import com.github.pagehelper.PageInfo;
-import com.hejun.lib.common.HttpStatus;
-import com.hejun.lib.common.ObjectResponse;
-import com.hejun.lib.common.PagedResponse;
-import com.hejun.lib.common.exception.ApiRuntimeException;
+import com.pro.exp.common.HttpStatus;
+import com.pro.exp.common.ObjectResponse;
+import com.pro.exp.common.PagedResponse;
 import com.pro.exp.common.action.DeleteAction;
 import com.pro.exp.common.action.InsertAction;
 import com.pro.exp.common.action.SelectAction;
@@ -16,6 +15,7 @@ import com.pro.exp.model.response.BaseNoticeTypeResponse;
 import com.pro.exp.model.response.IDResponse;
 import com.pro.exp.service.BaseExampleService;
 import com.pro.exp.service.base.interfaces.BaseNoticeTypeService;
+import com.pro.exp.service.exception.ApiRuntimeException;
 import com.pro.proexpweb.controller.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

@@ -7,17 +7,17 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
-import com.hejun.lib.common.HttpStatus;
-import com.hejun.lib.common.exception.ApiRuntimeException;
-import com.hejun.lib.util.GsonUtil;
-import com.hejun.lib.util.StringUtils;
 import com.pro.exp.common.Constants;
+import com.pro.exp.common.HttpStatus;
 import com.pro.exp.common.RedisKeys;
 import com.pro.exp.dao.interfaces.BaseExampleTypeMapper;
 import com.pro.exp.model.example.*;
 import com.pro.exp.service.BaseExampleService;
 import com.pro.exp.service.RedisService;
+import com.pro.exp.service.exception.ApiRuntimeException;
 import com.pro.exp.service.utils.BeanToSqlKey;
+import com.pro.exp.service.utils.GsonUtil;
+import com.pro.exp.service.utils.StringUtils;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -190,7 +190,7 @@ public class BaseExampleSerivceImpl implements BaseExampleService {
         String objectValue = BeanToSqlKey.getObjectValue(form.getClassName());
         if (StringUtils.isNotEmpty(objectValue)) {
             sqlMap.put("columns", objectValue);
-            log.info(objectValue);
+//            log.info(objectValue);
 
         } else {
             throw new ApiRuntimeException(HttpStatus.INTERNAL_SERVER_ERROR, 1, "查询类型无法获取字段");
@@ -200,17 +200,17 @@ public class BaseExampleSerivceImpl implements BaseExampleService {
             sqlMap.put("tableName", fromName);
             System.out.println(fromName);
             sqlMap.put("aliasName", Constants.TABLE_ALIAS);
-            log.info(fromName);
+//            log.info(fromName);
         } else {
             throw new ApiRuntimeException(HttpStatus.INTERNAL_SERVER_ERROR, 1, "查询类型无法获取表名");
         }
         String joinObjectRelation = BeanToSqlKey.getJoinObjectRelation(form.getClassName());
         sqlMap.put("joinSelect", joinObjectRelation);
-        log.info(joinObjectRelation);
+//        log.info(joinObjectRelation);
         System.out.println(joinObjectRelation);
         String whereSql = getWhereSql(form, powerForms);
         sqlMap.put("extendSql", whereSql);
-        log.info(whereSql);
+//        log.info(whereSql);
         System.out.println(whereSql);
         lists = mapper.selectCustomByExample(sqlMap);
         return new PageInfo<>(lists);

@@ -15,4 +15,20 @@ public class SelectOrderBy {
     String orderValue;
     @ApiModelProperty(value = "排序类似/asc 升序/desc 降序")
     OrderType orderType;
+
+    public String getOrderValue() {
+        return orderValue;
+    }
+
+    public void setOrderValue(String orderValue) {
+        this.orderValue = orderValue;
+    }
+
+    public OrderType getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(OrderType orderType) {
+        this.orderType = orderType;
+    }
 }

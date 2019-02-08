@@ -1,7 +1,7 @@
 package com.pro.proexpweb.controller;
 
-import com.hejun.lib.common.ObjectResponse;
-import com.hejun.lib.common.OpenInterface;
+import com.pro.exp.common.ObjectResponse;
+import com.pro.exp.common.interfaces.OpenInterface;
 import com.pro.exp.model.request.LoginForm;
 import com.pro.exp.model.response.LoginResponse;
 import com.pro.exp.service.LoginService;

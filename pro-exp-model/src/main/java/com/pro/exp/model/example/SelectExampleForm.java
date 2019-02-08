@@ -24,4 +24,36 @@ public class SelectExampleForm {
 
     @ApiModelProperty(value = "查询条件与后一个条件关系")
     private SelectLinkType link;
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    public List<String> getFieldValue() {
+        return fieldValue;
+    }
+
+    public void setFieldValue(List<String> fieldValue) {
+        this.fieldValue = fieldValue;
+    }
+
+    public SelectKeyWordType getType() {
+        return type;
+    }
+
+    public void setType(SelectKeyWordType type) {
+        this.type = type;
+    }
+
+    public SelectLinkType getLink() {
+        return link;
+    }
+
+    public void setLink(SelectLinkType link) {
+        this.link = link;
+    }
 }
