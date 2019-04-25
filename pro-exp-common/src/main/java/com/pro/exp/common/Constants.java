@@ -12,7 +12,7 @@ public class Constants {
     /**
      * 工程名称
      */
-    public static final String PROJECT_NAME = "hejun_edu";
+    public static final String PROJECT_NAME = "pro_exp";
 
     /**
      * 权限标签列表，初始化缓存
