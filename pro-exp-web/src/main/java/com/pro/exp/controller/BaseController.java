@@ -25,7 +25,7 @@ import java.util.List;
  * Created by JT on 2018/11/17 22:29
  */
 @Log4j2
-public class BaseController {
+public abstract class BaseController {
     /**
      * 转换集合对象到前端格式
      *
