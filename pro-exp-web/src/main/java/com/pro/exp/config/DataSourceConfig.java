@@ -1,16 +1,14 @@
 package com.pro.exp.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import com.pro.exp.interceptor.MyBatisInterceptor;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -18,77 +16,37 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "spring.datasource")
-@MapperScan(basePackages = "com.pro.exp.dao", sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = "com.pro.exp.dao", sqlSessionTemplateRef = "mysqlSqlSessionTemplate")
 @Log4j2
 public class DataSourceConfig {
-
-    private String dbUrl;
-    private String username;
-    private String password;
-    private String driverClassName;
-    private int initialSize;
-    private int minIdle;
-    private int maxActive;
-    private int maxWait;
-    private int timeBetweenEvictionRunsMillis;
-    private int minEvictableIdleTimeMillis;
-    private String validationQuery;
-    private boolean testWhileIdle;
-    private boolean testOnBorrow;
-    private boolean testOnReturn;
-    private String filters;
-    private String logSlowSql;
-
-    @Bean(name = "dataSource")
+    @Bean(name = "mysqlDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.mysql")
     @Primary
-    public DataSource dataSource() {
-        DruidDataSource datasource = new DruidDataSource();
-        datasource.setUrl(dbUrl);
-        datasource.setUsername(username);
-        datasource.setPassword(password);
-        datasource.setDriverClassName(driverClassName);
-        datasource.setInitialSize(initialSize);
-        datasource.setMinIdle(minIdle);
-        datasource.setMaxActive(maxActive);
-        datasource.setMaxWait(maxWait);
-        datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
-        datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
-        datasource.setValidationQuery(validationQuery);
-        datasource.setTestWhileIdle(testWhileIdle);
-        datasource.setTestOnBorrow(testOnBorrow);
-        datasource.setTestOnReturn(testOnReturn);
-        try {
-            datasource.setFilters(filters);
-        } catch (SQLException e) {
-            log.error("druid configuration initialization filter", e);
-        }
-        return datasource;
+    public DataSource testDataSource() {
+        return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "sqlSessionFactory")
+    @Bean(name = "mysqlSqlSessionFactory")
     @Primary
-    public SqlSessionFactory sqlSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws Exception {
+    public SqlSessionFactory testSqlSessionFactory(@Qualifier("mysqlDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setPlugins(new Interceptor[]{new MyBatisInterceptor()});
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         return bean.getObject();
     }
 
-    @Bean(name = "transactionManager")
+    @Bean(name = "mysqlTransactionManager")
     @Primary
-    public DataSourceTransactionManager testTransactionManager(@Qualifier("dataSource") DataSource dataSource) {
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("mysqlDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = "sqlSessionTemplate")
+    @Bean(name = "mysqlSqlSessionTemplate")
     @Primary
-    public SqlSessionTemplate sqlSessionTemplate(@Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("mysqlSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
