@@ -1,7 +1,8 @@
 package com.pro.exp.controller.test;
 
+import com.aliyun.openservices.shade.com.alibaba.fastjson.JSON;
+import com.pro.exp.model.vo.Result;
 import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -14,8 +15,8 @@ import java.util.Map;
 @Api(value = "申请类型管理", tags = "基础信息-申请-申请类型管理", description = "申请类型管理")
 @RequestMapping("/api")
 public class TestController {
-    @Value("${test}")
-    private String testjingteng;
+/*    @Value("${test}")
+    private String testjingteng;*/
 
     @GetMapping("/test")
     public String testMethod(){
@@ -24,9 +25,10 @@ public class TestController {
     }
 
     @PostMapping("/post/test")
-    public String testPostMethod(@RequestBody Map map){
+    public Result testPostMethod(@RequestBody Map map){
         System.out.println("请求到达");
-        System.out.println(testjingteng);
-        return "test success";
+//        System.out.println(testjingteng);
+        System.out.println("请求： "+ JSON.toJSONString(map));
+        return Result.success("test success");
     }
 }

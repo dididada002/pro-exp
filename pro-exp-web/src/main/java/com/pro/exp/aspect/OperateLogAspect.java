@@ -1,10 +1,11 @@
 package com.pro.exp.aspect;
 
+import com.aliyun.openservices.shade.com.alibaba.fastjson.JSON;
 import com.pro.exp.service.utils.GsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class OperateLogAspect {
     @Pointcut(value = "execution(* com.pro.exp.controller.*.*.* (..))")
     public void log(){}
 
-    @After("log()")
-    public void logOperate(JoinPoint joinPoint){
+    @AfterReturning(value = "log()",returning = "returnValue")
+    public void logOperate(JoinPoint joinPoint,Object returnValue){
         StringBuffer stringBuffer = new StringBuffer();
         //获取方法的参数
         Object[] args = joinPoint.getArgs();
@@ -61,6 +62,10 @@ public class OperateLogAspect {
             stringBuffer.append(" , param value : ");
             stringBuffer.append(s);
 
+        }
+        if (returnValue != null) {
+            stringBuffer.append(",返回值： ");
+            stringBuffer.append(JSON.toJSONString(returnValue));
         }
         //记录日志
         String logStr = stringBuffer.toString();
