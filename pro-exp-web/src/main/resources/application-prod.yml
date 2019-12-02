@@ -29,7 +29,7 @@ spring:
   redis:
     open: true  # 是否开启redis缓存  true开启   false关闭
     database: 0
-    host: 192.168.1.155
+    host: 101.200.58.119
     port: 6379
     password:    # 密码（默认为空）
     timeout: 6000  # 连接超时时长（毫秒）
@@ -54,3 +54,12 @@ pagehelper:
   auto-dialect: true
   # 这个一定要加上，不然mysql和oracle分页两个只能用一个，另一个会报错，加上后，两中数据库分页都可以用了
   auto-runtime-dialect: true
+
+## jwt
+appacc:
+  jwt:
+    # 加密秘钥
+    secret: f8e2e52034348f86b67cde581c0f9eb5asdfeqwr
+    # token有效时长，7天，单位秒
+    expire: 267840000
+    header: token

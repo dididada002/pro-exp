@@ -99,7 +99,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.pro.exp.dao.entity.VueIcon">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.pro.exp.dao.entity.VueIcon">
     insert into vue_icon (id, img_src, text_content, 
       sort_index, remark)
     values (#{id,jdbcType=BIGINT}, #{imgSrc,jdbcType=VARCHAR}, #{textContent,jdbcType=VARCHAR}, 

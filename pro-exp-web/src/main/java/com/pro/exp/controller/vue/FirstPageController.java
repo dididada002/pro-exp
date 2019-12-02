@@ -2,7 +2,7 @@ package com.pro.exp.controller.vue;
 
 import com.pro.exp.controller.BaseController;
 import com.pro.exp.model.vo.Result;
-import com.pro.exp.model.vue.FirstVueResponse;
+import com.pro.exp.model.vue.response.FirstVueResponse;
 import com.pro.exp.service.vue.interfaces.VueFirstPageService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

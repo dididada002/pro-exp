@@ -6,7 +6,7 @@ import com.pro.exp.dao.interfaces.VueIconMapper;
 import com.pro.exp.dao.interfaces.VueRecommendMapper;
 import com.pro.exp.dao.interfaces.VueSwiperMapper;
 import com.pro.exp.dao.interfaces.VueWeekendMapper;
-import com.pro.exp.model.vue.*;
+import com.pro.exp.model.vue.response.*;
 import com.pro.exp.service.vue.interfaces.VueFirstPageService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

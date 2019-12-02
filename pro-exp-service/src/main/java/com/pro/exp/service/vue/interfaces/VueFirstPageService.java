@@ -1,6 +1,6 @@
 package com.pro.exp.service.vue.interfaces;
 
-import com.pro.exp.model.vue.FirstVueResponse;
+import com.pro.exp.model.vue.response.FirstVueResponse;
 
 /**
  * @author: jingteng

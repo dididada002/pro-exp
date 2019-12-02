@@ -1,4 +1,4 @@
-package com.pro.exp.model.vue;
+package com.pro.exp.model.vue.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

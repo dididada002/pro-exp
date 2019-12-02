@@ -1,4 +1,4 @@
-package com.pro.exp.model.vue;
+package com.pro.exp.model.vue.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,8 +9,8 @@ import lombok.Data;
  * @date: 2019/11/13 21:13
  */
 @Data
-@ApiModel("vue项目首页推荐响应")
-public class RecommendResponse {
+@ApiModel("vue项目首页本周推荐响应")
+public class WeekendResponse {
     @ApiModelProperty(value = "id")
     private Long id;
 
