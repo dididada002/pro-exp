@@ -1,11 +1,11 @@
 server:
-  port: 8998
+  port: 8888
 
 spring:
   datasource:
     mysql:
       name: prod
-      url: jdbc:mysql://101.200.58.119:3306/renren_fast?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true
+      url: jdbc:mysql://101.200.58.119:3306/pro_dev?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true
       username: root
       password: Jt!!2018
       type: com.alibaba.druid.pool.DruidDataSource
