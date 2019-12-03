@@ -5,10 +5,11 @@
 IntelliJ IDEA
 
 ## 开发技术
-前端技术 ：(待定)
+前端技术 ：Vue.js
 
 后端技术 ：SpringBoot + MyBatis + MySQL
 
 中间件技术 : Druid + Redis + RabbitMQ + Guava + (待定)
 
 服务器技术： (待定)
+

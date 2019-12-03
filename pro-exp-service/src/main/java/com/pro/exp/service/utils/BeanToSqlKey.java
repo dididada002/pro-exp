@@ -46,7 +46,7 @@ public class BeanToSqlKey {
         // 拿到该类
         Class<?> clz = null;
         try {
-            clz = Class.forName("com.hejun.edu.dao.entity." + object);
+            clz = Class.forName("com.pro.exp.dao.entity." + object);
         } catch (ClassNotFoundException e) {
             throw new ApiRuntimeException(HttpStatus.NOT_ACCEPTABLE, 1, "类名反射失败");
         }
@@ -88,7 +88,7 @@ public class BeanToSqlKey {
         // 拿到该类
         Class<?> clz = null;
         try {
-            clz = Class.forName("com.hejun.edu.dao.entity." + object);
+            clz = Class.forName("com.pro.exp.dao.entity." + object);
         } catch (ClassNotFoundException e) {
             throw new ApiRuntimeException(HttpStatus.NOT_ACCEPTABLE, 1, "类名反射失败");
         }
